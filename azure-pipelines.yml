@@ -1,0 +1,46 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: windows-latest
+
+steps:
+- task: securedevelopmentteam.vss-secure-development-tools.build-task-credscan.CredScan@3
+  displayName: 'Run CredScan'
+  inputs:
+    toolMajorVersion: 'V3'
+    outputFormat: sarif
+    debugMode: false
+
+- task: ComponentGovernanceComponentDetection@0
+  inputs:
+    scanType: 'Register'
+    verbosity: 'Verbose'
+    alertWarningLevel: 'High'
+
+- script: |
+    mkdir RustupInstall
+    cd RustupInstall
+    curl --output rustup-init.exe https://static.rust-lang.org/rustup/dist/i686-pc-windows-msvc/rustup-init.exe
+    rustup-init
+    rustup toolchain install nightly
+    cd ..
+    rustup override set nightly
+  displayName: 'Install Rust'
+  workingDirectory: '$(Build.SourcesDirectory)'
+
+- script: cargo test
+  displayName: 'Run unit tests'
+  workingDirectory: '$(Build.SourcesDirectory)'
+
+- script: cargo bench
+  displayName: 'Run benchmarks'
+  workingDirectory: '$(Build.SourcesDirectory)'
+
+- task: securedevelopmentteam.vss-secure-development-tools.build-task-publishsecurityanalysislogs.PublishSecurityAnalysisLogs@3
+  displayName: 'Publish Security Analysis Logs'

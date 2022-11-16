@@ -1,0 +1,93 @@
+{
+    "$schema": "https://json.schemastore.org/component-detection-manifest.json",
+    "Registrations": [
+        {
+            "Component": {
+                "Type": "other",
+                "Other": {
+                    "Name": "curve25519-dalek-ng",
+                    "Version": "4.1",
+                    "DownloadUrl": "https://github.com/Tarinn/curve25519-dalek-ng"
+                }
+            },
+            "DevelopmentDependency": false
+        },
+        {
+            "Component": {
+                "Type": "other",
+                "Other": {
+                    "Name": "sha2",
+                    "Version": "0.9",
+                    "DownloadUrl": "https://github.com/RustCrypto/hashes/archive/refs/tags/sha2-v0.9.0.zip"
+                }
+            },
+            "DevelopmentDependency": false
+        },
+        {
+            "Component": {
+                "Type": "other",
+                "Other": {
+                    "Name": "rand",
+                    "Version": "0.8",
+                    "DownloadUrl": "https://github.com/rust-random/rand/archive/refs/tags/0.8.0.zip"
+                }
+            },
+            "DevelopmentDependency": false
+        },
+        {
+            "Component": {
+                "Type": "other",
+                "Other": {
+                    "Name": "rand_core",
+                    "Version": "0.6",
+                    "DownloadUrl": "https://github.com/rust-random/rand/archive/refs/tags/rand_core-0.6.1.zip"
+                }
+            },
+            "DevelopmentDependency": false
+        },
+        {
+            "Component": {
+                "Type": "other",
+                "Other": {
+                    "Name": "serde",
+                    "Version": "1",
+                    "DownloadUrl": "https://github.com/serde-rs/serde/archive/refs/tags/v1.0.147.zip"
+                }
+            },
+            "DevelopmentDependency": false
+        },
+        {
+            "Component": {
+                "Type": "other",
+                "Other": {
+                    "Name": "lazy_static",
+                    "Version": "1.4.0",
+                    "DownloadUrl": "https://github.com/rust-lang-nursery/lazy-static.rs/archive/refs/tags/1.4.0.zip"
+                }
+            },
+            "DevelopmentDependency": false
+        },
+        {
+            "Component": {
+                "Type": "other",
+                "Other": {
+                    "Name": "serde_json",
+                    "Version": "1",
+                    "DownloadUrl": "https://github.com/serde-rs/json/archive/refs/tags/v1.0.87.zip"
+                }
+            },
+            "DevelopmentDependency": true
+        },
+        {
+            "Component": {
+                "Type": "other",
+                "Other": {
+                    "Name": "criterion",
+                    "Version": "0.3",
+                    "DownloadUrl": "https://github.com/bheisler/criterion.rs/archive/refs/tags/0.3.6.zip"
+                }
+            },
+            "DevelopmentDependency": true
+        }
+    ]
+}
