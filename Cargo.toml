@@ -16,7 +16,7 @@ crate-type = ["lib"]
 [dependencies]
 curve25519-dalek-ng = { version = "4.1", features = ["std", "simd_backend", "serde"]}
 sha2 = "0.9"
-rand = "0.8"
+rand = "0.9"
 rand_core = "0.6"
 serde = "1"
 lazy_static = "1.4.0"
